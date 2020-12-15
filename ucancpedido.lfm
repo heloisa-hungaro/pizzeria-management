@@ -1,0 +1,479 @@
+object FCancPedido: TFCancPedido
+  Left = 460
+  Height = 601
+  Top = 183
+  Width = 781
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Cancelar Pedido'
+  ClientHeight = 601
+  ClientWidth = 781
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  Position = poDesktopCenter
+  LCLVersion = '1.4.4.0'
+  object GbPedidos: TGroupBox
+    Left = 1
+    Height = 554
+    Top = 0
+    Width = 778
+    Caption = 'PEDIDOS DE HOJE - DIA '
+    ClientHeight = 529
+    ClientWidth = 774
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    object GridPedidos: TDBGrid
+      Left = 0
+      Height = 464
+      Top = 64
+      Width = 774
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Telefone'
+          Width = 85
+          FieldName = 'telefone'
+        end      
+        item
+          Title.Caption = 'Nome'
+          Width = 395
+          FieldName = 'nome'
+        end      
+        item
+          Title.Caption = 'Hora'
+          Width = 70
+          FieldName = 'hora'
+        end      
+        item
+          Title.Caption = 'Código'
+          Width = 90
+          FieldName = 'cod_pedido'
+        end      
+        item
+          Title.Caption = 'Valor Total'
+          Width = 90
+          FieldName = 'valor_total'
+        end>
+      DataSource = DPedido
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      ReadOnly = True
+      Scrollbars = ssVertical
+      TabOrder = 1
+      TabStop = False
+      TitleFont.Height = -13
+      TitleFont.Name = 'Arial'
+      OnDblClick = GridPedidosDblClick
+    end
+    object PTop: TPanel
+      Left = 0
+      Height = 64
+      Top = 0
+      Width = 774
+      Align = alTop
+      BevelInner = bvLowered
+      ClientHeight = 64
+      ClientWidth = 774
+      Color = clSilver
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      object BtnPesquisar: TBitBtn
+        Left = 720
+        Height = 30
+        Hint = 'Pesquisar'
+        Top = 22
+        Width = 35
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF000000000100000087000000E500000072FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00000000010000009C000000FF000000FF000000E5FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00000000010000009A000000FF000000FF000000FF00000087FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+          000100000098000000FF000000FF000000FF0000009C00000001FFFFFF00FFFF
+          FF000000000100000065000000B3000000E6000000E6000000B3000000650000
+          000C000000C8000000FF000000FF0000009A00000001FFFFFF00FFFFFF000000
+          001A000000BF000000FF000000CF0000009900000099000000CF000000FF0000
+          00BF00000027000000C80000009800000001FFFFFF00FFFFFF00000000010000
+          00BF000000F000000059FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000590000
+          00F0000000BF0000000C00000001FFFFFF00FFFFFF00FFFFFF00000000650000
+          00FF00000059FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+          0059000000FF00000065FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000B30000
+          00CFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00000000CF000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000E60000
+          0099FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF0000000099000000E6FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000E60000
+          009900000065000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF0000000099000000E6FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000B30000
+          00CF00000021000000F40000002AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00000000CF000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000650000
+          00FF000000590000005E000000F4000000B3FFFFFF00FFFFFF00FFFFFF000000
+          0059000000FF00000065FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+          00BF000000F0000000590000002100000065FFFFFF00FFFFFF00000000590000
+          00F0000000BF00000001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+          001A000000BF000000FF000000CF0000009900000099000000CF000000FF0000
+          00BF0000001AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF000000000100000065000000B3000000E6000000E6000000B3000000650000
+          0001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+        }
+        OnClick = BtnPesquisarClick
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object Label2: TLabel
+        Left = 157
+        Height = 20
+        Top = 6
+        Width = 46
+        Caption = 'Cliente'
+        ParentColor = False
+      end
+      object EdtCliente: TEdit
+        Left = 157
+        Height = 28
+        Hint = 'Pesquisar por fornecedor'
+        Top = 24
+        Width = 554
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object Label6: TLabel
+        Left = 9
+        Height = 20
+        Top = 6
+        Width = 60
+        Caption = 'Telefone:'
+        ParentColor = False
+      end
+      object EdtTelefone: TEdit
+        Left = 9
+        Height = 28
+        Hint = 'Pesquisar por código (somente numeros)'
+        Top = 24
+        Width = 138
+        NumbersOnly = True
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+      end
+    end
+  end
+  object PBottom: TPanel
+    Left = 0
+    Height = 50
+    Top = 551
+    Width = 781
+    Align = alBottom
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    ClientHeight = 50
+    ClientWidth = 781
+    Color = clGray
+    ParentColor = False
+    TabOrder = 1
+    object BtnVoltar: TBitBtn
+      Left = 649
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Voltar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00000000010000005300000099FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF000000004A000000CE000000FF000000F0FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        0041000000C5000000FF000000FF000000FF000000F0FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A30000
+        00FF000000FF000000FF000000FF000000FF000000F700000070000000700000
+        007000000049FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FE0000002AFFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F200000020000000200000
+        0082000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0058000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0058000000FF00000038000000910000004EFFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0037000000A000000023000000CC000000FB00000054FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00000000300000
+        005800000058000000580000006E000000F8000000FB00000054000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00000000E50000
+        00FF000000FF000000FF000000FF000000FF000000FF000000BF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000ECFFFFFF000000003B0000
+        0060000000600000006000000073000000F8000000FB00000054000000FF0000
+        00FF000000FF000000FF000000FF000000EE00000062FFFFFF00FFFFFF000000
+        0039000000A800000024000000C7000000FC00000057FFFFFF00000000FF0000
+        00FF000000FF000000F1000000800000000FFFFFFF00FFFFFF00FFFFFF000000
+        005A000000FF000000380000009800000054FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000D1000000C0000000C0000000C0000000C0000000C00000
+        00E7000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000810000
+        00D0000000D0000000D0000000D0000000D0000000D0000000D0000000D00000
+        00D0000000A700000007FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = BtnVoltarClick
+      TabOrder = 1
+    end
+    object BtnCancelar: TBitBtn
+      Left = 17
+      Height = 30
+      Top = 11
+      Width = 200
+      Caption = 'CANCELAR'
+      Font.Style = [fsBold]
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E00200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006DFFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF000200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006D020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E0010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015
+      }
+      OnClick = BtnCancelarClick
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object Transaction: TSQLTransaction
+    Active = False
+    Database = FPrincipal.Database
+    left = 672
+    top = 264
+  end
+  object DPedido: TDataSource
+    DataSet = QPedido
+    left = 568
+    top = 264
+  end
+  object QPedido: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'cod_pedido'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'data'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'hora'
+        DataType = ftTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'cancelado'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'valor_total'
+        DataType = ftFloat
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'nome'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'telefone'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end>
+    Database = FPrincipal.Database
+    Transaction = Transaction
+    SQL.Strings = (
+      'select P.cod_pedido, P.data, P.hora, P.cancelado, P.valor_total, C.nome, C.telefone'
+      'from pedido P'
+      'left join cliente C on C.cod_cliente=P.cod_cliente'
+      'order by P.data desc, P.hora desc, C.nome'
+    )
+    Params = <>
+    left = 472
+    top = 264
+    object QPedidocod_pedido: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cod_pedido'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidodata: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidohora: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'hora'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidovalor_total: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_total'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object QPedidonome: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QPedidotelefone: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'telefone'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object QPedidocancelado: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cancelado'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object Q: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'cod_cliente'
+        DataType = ftAutoInc
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'telefone'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'nome'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'rua'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'numero'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'complemento'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'bairro'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'cep'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Database = FPrincipal.Database
+    Transaction = Transaction
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 376
+    top = 264
+  end
+end

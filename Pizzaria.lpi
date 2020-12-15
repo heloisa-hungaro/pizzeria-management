@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Pizzaria"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="4">
+      <Item1>
+        <PackageName Value="fortes324forlaz"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="SQLDBLaz"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="LCL"/>
+      </Item4>
+    </RequiredPackages>
+    <Units Count="21">
+      <Unit0>
+        <Filename Value="Pizzaria.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UPrincipal"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="upescliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ucadcliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="ucadingrediente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadIngrediente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="upesingrediente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesIngrediente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ucadentregador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadEntregador"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="upesentregador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesEntregador"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="ucadfornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="upesfornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="upesfornecimento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesFornecimento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="ucadfornecimento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadFornecimento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="upespizza.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesPizza"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="upesmassa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesMassa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="ucadpizza.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadPizza"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="ucadmassa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadMassa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="ucadpedido.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadPedido"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="upespedido.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesPedido"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="ucancpedido.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCancPedido"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="upesendereco.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FPesEndereco"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="ucadendereco.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FCadEndereco"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit20>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Pizzaria"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

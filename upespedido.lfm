@@ -1,0 +1,913 @@
+object FPesPedido: TFPesPedido
+  Left = 480
+  Height = 559
+  Top = 221
+  Width = 1130
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'FPesPedido'
+  ClientHeight = 559
+  ClientWidth = 1130
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  Position = poDesktopCenter
+  LCLVersion = '1.4.4.0'
+  object PBottom: TPanel
+    Left = 0
+    Height = 50
+    Top = 509
+    Width = 1130
+    Align = alBottom
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    ClientHeight = 50
+    ClientWidth = 1130
+    Color = clGray
+    ParentColor = False
+    TabOrder = 2
+    object BtnAdicionar: TBitBtn
+      Left = 16
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Adicionar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000007000000D1000000FF000000FF0000
+        00D100000007FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF000000002F000000FF000000FF000000FF0000
+        00FF0000002FFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000070000
+        002F00000030000000300000003000000057000000FF000000FF000000FF0000
+        00FF000000570000003000000030000000300000002F00000007000000D10000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000D1000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000D10000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000D1000000070000
+        002F00000030000000300000003000000057000000FF000000FF000000FF0000
+        00FF000000570000003000000030000000300000002F00000007FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000030000000FF000000FF000000FF0000
+        00FF00000030FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF000000002F000000FF000000FF000000FF0000
+        00FF0000002FFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF0000000007000000D1000000FF000000FF0000
+        00D100000007FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = BtnAdicionarClick
+      TabOrder = 0
+    end
+    object BtnAlterar: TBitBtn
+      Left = 144
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Alterar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000DF0000
+        00AB0000007B0000003E00000008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000AB0000
+        00300000001F0000005D000000C90000003CFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000007C0000
+        001F0000001800000047000000A8000000960000003CFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000003E0000
+        005D000000470000008A0000007800000084000000910000003CFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000080000
+        00C9000000A800000078FFFFFF000000004D00000085000000910000003CFFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        003C00000096000000840000004DFFFFFF000000004C00000085000000910000
+        003CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF000000003C00000091000000850000004CFFFFFF000000004B000000860000
+        00910000003CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF000000003C00000091000000850000004BFFFFFF000000004A0000
+        0087000000910000003CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000000003C00000091000000860000004AFFFFFF000000
+        004900000088000000910000003CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF000000003C000000910000008700000049FFFF
+        FF000000004800000061000000910000003CFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000003C00000091000000880000
+        0048FFFFFF00FFFFFF0000000063000000BC0000003CFFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000003C000000910000
+        0061FFFFFF0000000061000000760000009F000000AD0000002DFFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000003C0000
+        009100000063000000760000009F0000005A0000009F00000083FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        003C000000BC0000009F0000005A0000009F0000000600000093FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF000000003C000000AD0000009F000000060000001400000081FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF000000002D00000083000000930000008100000016
+      }
+      OnClick = BtnAlterarClick
+      TabOrder = 1
+    end
+    object BtnExcluir: TBitBtn
+      Left = 400
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Excluir'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E00200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006DFFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF000200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006D020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E0010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015
+      }
+      OnClick = BtnExcluirClick
+      TabOrder = 2
+    end
+    object BtnVoltar: TBitBtn
+      Left = 996
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Voltar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00000000010000005300000099FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF000000004A000000CE000000FF000000F0FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        0041000000C5000000FF000000FF000000FF000000F0FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000A30000
+        00FF000000FF000000FF000000FF000000FF000000F700000070000000700000
+        007000000049FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FE0000002AFFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F200000020000000200000
+        0082000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0058000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0058000000FF00000038000000910000004EFFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00FFFFFF000000
+        0037000000A000000023000000CC000000FB00000054FFFFFF00000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00000000300000
+        005800000058000000580000006E000000F8000000FB00000054000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000F0FFFFFF00000000E50000
+        00FF000000FF000000FF000000FF000000FF000000FF000000BF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000ECFFFFFF000000003B0000
+        0060000000600000006000000073000000F8000000FB00000054000000FF0000
+        00FF000000FF000000FF000000FF000000EE00000062FFFFFF00FFFFFF000000
+        0039000000A800000024000000C7000000FC00000057FFFFFF00000000FF0000
+        00FF000000FF000000F1000000800000000FFFFFFF00FFFFFF00FFFFFF000000
+        005A000000FF000000380000009800000054FFFFFF00FFFFFF00000000FF0000
+        00FF000000FF000000D1000000C0000000C0000000C0000000C0000000C00000
+        00E7000000FF00000038FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000810000
+        00D0000000D0000000D0000000D0000000D0000000D0000000D0000000D00000
+        00D0000000A700000007FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = BtnVoltarClick
+      TabOrder = 3
+    end
+    object BtnCancelar: TBitBtn
+      Left = 273
+      Height = 30
+      Top = 11
+      Width = 112
+      Caption = 'Cancelar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E00200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006DFFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF0002000280020001FF020001FF020001FF020001FF0200
+        01FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001FF020001FF0200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF02000280020002800200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF000200006D0200
+        01FF020001FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF000200
+        0280020001FF020001FF020001FF020001FF020001FF0200006D020001E00200
+        01FF020001FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0002000280020001FF020001FF020001FF020001FF020001E0010001AB0200
+        01FF020001FF020001FF02000280FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF0002000280020001FF020001FF020001FF010001AB000000150100
+        01AB020001E00200006DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000200006D020001E0010001AB00000015
+      }
+      OnClick = BtnCancelarClick
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 396
+    Top = 113
+    Width = 1128
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Código'
+        Width = 100
+        FieldName = 'cod_pedido'
+      end    
+      item
+        Title.Caption = 'Data'
+        Width = 75
+        FieldName = 'data'
+      end    
+      item
+        Title.Caption = 'Hora'
+        Width = 60
+        FieldName = 'hora'
+      end    
+      item
+        Title.Caption = 'Nome'
+        Width = 395
+        FieldName = 'nome'
+      end    
+      item
+        Title.Caption = 'Telefone'
+        Width = 85
+        FieldName = 'telefone'
+      end    
+      item
+        Title.Caption = 'Para entrega?'
+        Width = 95
+        FieldName = 'entregue'
+      end    
+      item
+        Title.Caption = 'Valor Total'
+        Width = 90
+        FieldName = 'valor_total'
+      end    
+      item
+        Title.Caption = 'Forma de Pagto'
+        Width = 105
+        FieldName = 'pagto'
+      end    
+      item
+        Title.Caption = 'Cancelado?'
+        Width = 80
+        FieldName = 'canc'
+      end>
+    DataSource = DPedido
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    ReadOnly = True
+    Scrollbars = ssVertical
+    TabOrder = 1
+    TabStop = False
+    TitleFont.Height = -13
+    TitleFont.Name = 'Arial'
+  end
+  object PTop: TPanel
+    Left = 0
+    Height = 113
+    Top = 0
+    Width = 1130
+    Align = alTop
+    BevelInner = bvLowered
+    ClientHeight = 113
+    ClientWidth = 1130
+    Color = clSilver
+    ParentColor = False
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 273
+      Height = 20
+      Top = 4
+      Width = 46
+      Caption = 'Cliente'
+      ParentColor = False
+    end
+    object BtnPesquisar: TBitBtn
+      Left = 1072
+      Height = 40
+      Hint = 'Pesquisar'
+      Top = 63
+      Width = 40
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF000000000100000087000000E500000072FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00000000010000009C000000FF000000FF000000E5FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000010000009A000000FF000000FF000000FF00000087FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        000100000098000000FF000000FF000000FF0000009C00000001FFFFFF00FFFF
+        FF000000000100000065000000B3000000E6000000E6000000B3000000650000
+        000C000000C8000000FF000000FF0000009A00000001FFFFFF00FFFFFF000000
+        001A000000BF000000FF000000CF0000009900000099000000CF000000FF0000
+        00BF00000027000000C80000009800000001FFFFFF00FFFFFF00000000010000
+        00BF000000F000000059FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000590000
+        00F0000000BF0000000C00000001FFFFFF00FFFFFF00FFFFFF00000000650000
+        00FF00000059FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        0059000000FF00000065FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000B30000
+        00CFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000CF000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000E60000
+        0099FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000099000000E6FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000E60000
+        009900000065000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF0000000099000000E6FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000B30000
+        00CF00000021000000F40000002AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00000000CF000000B3FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000650000
+        00FF000000590000005E000000F4000000B3FFFFFF00FFFFFF00FFFFFF000000
+        0059000000FF00000065FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+        00BF000000F0000000590000002100000065FFFFFF00FFFFFF00000000590000
+        00F0000000BF00000001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+        001A000000BF000000FF000000CF0000009900000099000000CF000000FF0000
+        00BF0000001AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF000000000100000065000000B3000000E6000000E6000000B3000000650000
+        0001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = BtnPesquisarClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+    end
+    object EdtCliente: TEdit
+      Left = 273
+      Height = 28
+      Hint = 'Pesquisar por fornecedor'
+      Top = 23
+      Width = 639
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object Label4: TLabel
+      Left = 145
+      Height = 20
+      Top = 4
+      Width = 35
+      Caption = 'Data:'
+      ParentColor = False
+    end
+    object EdtData: TMaskEdit
+      Left = 145
+      Height = 28
+      Hint = 'Pesquisar por data'
+      Top = 23
+      Width = 119
+      CharCase = ecNormal
+      MaxLength = 10
+      TabOrder = 1
+      EditMask = '99/99/9999;1;_'
+      Text = '  /  /    '
+      SpaceChar = '_'
+    end
+    object Label3: TLabel
+      Left = 193
+      Height = 20
+      Top = 55
+      Width = 74
+      Caption = 'Valor Total:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 20
+      Top = 4
+      Width = 52
+      Caption = 'Código:'
+      ParentColor = False
+    end
+    object EdtCodigo: TEdit
+      Left = 16
+      Height = 28
+      Hint = 'Pesquisar por código (somente numeros)'
+      Top = 23
+      Width = 120
+      NumbersOnly = True
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object Label6: TLabel
+      Left = 921
+      Height = 20
+      Top = 4
+      Width = 60
+      Caption = 'Telefone:'
+      ParentColor = False
+    end
+    object EdtTelefone: TEdit
+      Left = 921
+      Height = 28
+      Hint = 'Pesquisar por código (somente numeros)'
+      Top = 23
+      Width = 138
+      NumbersOnly = True
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object EdtValor: TFloatSpinEdit
+      Left = 193
+      Height = 28
+      Top = 74
+      Width = 135
+      Increment = 1
+      MaxValue = 9999
+      MinValue = 0
+      TabOrder = 5
+      Value = 0
+    end
+    object Label7: TLabel
+      Left = 16
+      Height = 20
+      Top = 55
+      Width = 113
+      Caption = 'Balcão / Entrega:'
+      ParentColor = False
+    end
+    object CmbEntrega: TComboBox
+      Left = 16
+      Height = 28
+      Top = 74
+      Width = 168
+      ItemHeight = 20
+      ItemIndex = 0
+      Items.Strings = (
+        'AMBOS'
+        'BALCÃO'
+        'ENTREGA'
+      )
+      Style = csDropDownList
+      TabOrder = 4
+      Text = 'AMBOS'
+    end
+    object Label8: TLabel
+      Left = 337
+      Height = 20
+      Top = 55
+      Width = 145
+      Caption = 'Forma de Pagamento:'
+      ParentColor = False
+    end
+    object CmbFormaPagto: TComboBox
+      Left = 337
+      Height = 28
+      Top = 74
+      Width = 201
+      ItemHeight = 20
+      ItemIndex = 0
+      Items.Strings = (
+        'TODAS'
+        'DINHEIRO'
+        'CARTÃO DÉBITO'
+        'CARTÃO CRÉDITO'
+      )
+      Style = csDropDownList
+      TabOrder = 6
+      Text = 'TODAS'
+    end
+    object RdoTipo: TRadioGroup
+      Left = 552
+      Height = 47
+      Top = 55
+      Width = 507
+      AutoFill = True
+      Caption = 'Tipo:'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 22
+      ClientWidth = 503
+      Columns = 3
+      ItemIndex = 0
+      Items.Strings = (
+        'TODOS'
+        'EM ABERTO / FECHADOS'
+        'CANCELADOS'
+      )
+      TabOrder = 7
+    end
+  end
+  object Q: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'cod_cliente'
+        DataType = ftAutoInc
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'telefone'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'nome'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'rua'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'numero'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'complemento'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'bairro'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'cep'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Database = FPrincipal.Database
+    Transaction = Transaction
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 704
+    top = 376
+  end
+  object QPedido: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'cod_pedido'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'data'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'hora'
+        DataType = ftTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'valor_total'
+        DataType = ftFloat
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'forma_pagamento'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'cancelado'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'cod_cliente'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'troco_para'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'cod_entregador'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'cod_pedido_1'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'valor_entrega'
+        DataType = ftFloat
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'pagto'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'canc'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'nome'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'telefone'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'entregue'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end>
+    Database = FPrincipal.Database
+    Transaction = Transaction
+    SQL.Strings = (
+      'select P.*, EEP.*,'
+      'case forma_pagamento when 0 then ''DINHEIRO'' when 1 then ''DÉBITO'' when 2 then ''CRÉDITO'' end as pagto,'
+      'case cancelado when 0 then ''NÃO'' when 1 then ''SIM'' end as canc,'
+      'C.nome, C.telefone,'
+      'case when  EEP.valor_entrega IS NULL then ''NÃO'' else ''SIM'' end as entregue'
+      'from pedido P'
+      'left join cliente C on C.cod_cliente=P.cod_cliente'
+      'left join entregador_entrega_pedido EEP on'
+      'EEP.cod_pedido=P.cod_pedido'
+      'order by P.data desc, P.hora desc, C.nome'
+    )
+    Params = <>
+    left = 784
+    top = 376
+    object QPedidocod_pedido: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cod_pedido'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidodata: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidohora: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'hora'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidovalor_total: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_total'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+    object QPedidoforma_pagamento: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'forma_pagamento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidocancelado: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cancelado'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidocod_cliente: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cod_cliente'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidotroco_para: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'troco_para'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object QPedidopagto: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'pagto'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QPedidocanc: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'canc'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object QPedidonome: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object QPedidotelefone: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'telefone'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object QPedidoentregue: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'entregue'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object QPedidocod_entregador: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cod_entregador'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidocod_pedido_1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'cod_pedido_1'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QPedidovalor_entrega: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'valor_entrega'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = -1
+    end
+  end
+  object DPedido: TDataSource
+    DataSet = QPedido
+    left = 880
+    top = 376
+  end
+  object Transaction: TSQLTransaction
+    Active = False
+    Database = FPrincipal.Database
+    left = 984
+    top = 376
+  end
+end
